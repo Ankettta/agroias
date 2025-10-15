@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="page_title">АгроИАС</title>
+   <!-- ФАВИКОНКА -->
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiByeD0iMTAiIGZpbGw9IiM0RTg5RkYiLz4KPHBhdGggZD0iTTEyIDZDMTAuODk1IDYgMTAgNi44OTUgMTAgOFYxMkM1LjQ3NyAxMiA1IDEyLjQ3NyA1IDE3QzUgMTcuNTEgNS40ODggMTcuOTkxIDUuOTg4IDE4LjM4M0w5LjM4MyAxOS42MDhDMTAuMjA2IDIwLjQwNCAxMS4wOTkgMjEgMTIgMjFDMTIuOTA0IDIxIDEzLjc5NiAyMC40MDQgMTQuNjE3IDE5LjYwOEwxOC4wMTIgMTguMzgzQzE4LjUwOCAxNy45OTEgMTkgMTcuNTEgMTkgMTdDMTkgMTIuNDc3IDE4LjUyMyAxMiAxOCAxMlY4QzE4IDYuODk1IDE3LjEwNSA2IDE2IDZDMTEuNjE0IDYgNy4zOTQgNiAxMiA2WiIgZmlsbD0iIzAwNTZCMiIvPgo8L3N2Zz4=" type="image/svg+xml">
+  <link rel="alternate icon" href="favicon.ico" type="image/x-icon"> 
+      <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104639238', 'ym');
+
+        ym(104639238, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/104639238" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- ШАПКА -->
+  <header class="header">
+    <div class="container header__container">
+     <a href="#" class="header__logo-link" data-i18n="header_logo">
+      <div  class="header__logo">
+        <span><strong>АгроИАС</strong></span>
+      </div>
+    </a>
+
+      <nav class="header__nav" id="mainNav" aria-hidden="true">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#about" target="_blank" class="nav__link" data-i18n="nav_about">О системе</a></li>
+          <li class="nav__item"><a href="#features" class="nav__link" data-i18n="nav_features">Преимущества</a></li>
+          <li class="nav__item"><a href="#progress" class="nav__link" data-i18n="nav_progress">Ход разработки</a></li>
+          <li class="nav__item"><a href="#roadmap" class="nav__link" data-i18n="nav_roadmap">Дорожная карта</a></li>
+          <li class="nav__item"><a href="#contacts" class="nav__link" data-i18n="nav_contacts">Контакты</a></li>
+        
+        <li class="nav__divider"></li>
+
+        <li class="nav__item nav__item--lang-mobile">
+          <div class="header__lang header__lang--mobile" data-i18n="header_lang">
+            <button class="lang-btn" data-lang="ru" data-i18n="lang_ru">RU</button>
+            <button class="lang-btn" data-lang="en" data-i18n="lang_en">EN</button>
+            <button class="lang-btn" data-lang="zh" data-i18n="lang_zh">中文</button>
+          </div>
+        </li>
+        </ul>
+    </nav>
+
+      <div class="header__controls">
+       <div class="header__lang header__lang--desktop">
+        <button class="lang-btn" data-lang="ru" data-i18n="lang_ru">RU</button>
+        <button class="lang-btn" data-lang="en" data-i18n="lang_en">EN</button>
+        <button class="lang-btn" data-lang="zh" data-i18n="lang_zh">中文</button>
+      </div>
+
+        <a href="#cooperation" class="btn btn--primary" data-i18n="btn_contact">Связаться</a>
+        <button class="burger" aria-expanded="false" >
+          <span class="burger__icon">☰</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- БАННЕР -->
+  <section class="banner">
+    <div class="container banner__container">
+      <div class="banner__wrapper">
+        <h1 class="banner__title fade-in fade-in-1" data-i18n="banner_title">
+          Интеллектуальная система<br>
+          проактивного мониторинга<br>
+          агробиотехнических объектов
+        </h1>
+        <p class="banner__subtitle fade-in fade-in-2" data-i18n="banner_subtitle">
+          Сочетание передовых технологий и искусственного интеллекта
+          для точного контроля и оптимизации сельскохозяйственных процессов
+        </p>
+
+        <div class="banner__actions fade-in fade-in-3">
+          <div class="banner__buttons">
+            <a href="#about" class="btn btn--primary" data-i18n="btn_learn">Изучить систему</a>
+            <a href="#cooperation" class="btn btn--secondary" data-i18n="btn_contact_us">Связаться с нами</a>
+          </div>
+
+         <div class="banner__partners fade-in fade-in-4">
+            <a href="https://spcras.ru/" target="_blank" class="partner">
+              <img src="img/icon_fic_ran.png" alt="СПб ФИЦ РАН" data-i18n="partner_spbfic_alt">
+              <span data-i18n="partner_spbfic_text">СПб ФИЦ РАН</span> 
+            </a>
+
+            <a href="https://litsam.ru/index.php/ru/homepage-ru" target="_blank" class="partner">
+              <img src="img/icon_litsam.png" alt="ЛИТСАМ" data-i18n="partner_litsam_alt">
+              <span data-i18n="partner_litsam_text">ЛИТСАМ</span> 
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ОСНОВНОЙ КОНТЕНТ -->
+  <main>
+    <section id="intro" class="section intro">
+      <div class="container intro__row">
+        <h2 class="intro__title fade-in" data-i18n="intro_title">АгроИАС</h2>
+        <p class="intro__text fade-in" data-i18n="intro_text">
+         <strong> это интеллектуальная система </strong>проактивного мониторинга
+          агробиотехнических объектов
+          (частных хозяйств, ферм, сельскохозяйственных предприятий)
+        </p>
+      </div>
+    </section>
+
+    <!-- О системе -->
+   <section id="about" class="section about">
+    <div class="container">
+      <h2 class="section__title fade-in" data-i18n="about_title">О системе</h2>
+
+      <div class="about__module about__module--left fade-in" data-i18n="about_module_manage">
+        <h3 class="about__module-title" data-i18n="about_module_manage_title">Модуль.Управление</h3>
+        <p class="about__module-text" data-i18n="about_module_manage_text">
+          Модуль «Управление» предоставляет инструменты для комплексного анализа
+          и планирования на основе данных со всего производства. Руководители получают
+          детальную информацию для эколого-экономической оценки и проактивного принятия
+          стратегических решений.
+        </p>
+      </div>
+
+    <div class="about__module about__module--right fade-in" data-i18n="about_module_support">
+        <h3 class="about__module-title about__module-title--right" data-i18n="about_module_support_title">Модуль.Поддержка</h3>
+        <p class="about__module-text" data-i18n="about_module_support_text">
+          Модуль «Поддержка» предоставляет исполнителям централизованный
+          доступ ко всей необходимой информации на каждом этапе работ.
+          Это позволяет оперативно решать задачи, основываясь на актуальных
+          данных о ходе производства и экологических нормативах.
+        </p>
+      </div>
+
+  </div>
+</section>
+
+
+  <!-- Производство -->
+    <section id="production" class="section production">
+      <div class="production__bg">
+        <h2 class="production__title fade-in" data-i18n="production_title">Модуль. Производство</h2>
+        <div class="container">
+          <div class="production__blocks fade-in">
+            <div class="production__block production__block--left fade-in" data-i18n="production_block_agronomist">
+              <h3 class="production__block-title" data-i18n="production_block_agronomist_title">Агроном</h3>
+              <p class="production__block-text" data-i18n="production_block_agronomist_text">
+                Модуль «Агроном» предоставляет детализированные данные по состоянию посевов, почвы и погодным условиям. 
+                Это позволяет проводить анализ и планировать агротехнические операции для повышения урожайности и минимизации рисков.
+              </p>
+            </div>
+
+            <div class="production__divider"></div>
+
+            <div class="production__block production__block--right fade-in" data-i18n="production_block_worker">
+              <h3 class="production__block-title" data-i18n="production_block_worker_title">Рабочий</h3>
+              <p class="production__block-text" data-i18n="production_block_worker_text">
+                Модуль «Рабочий» предоставляет четкие пошаговые задания и актуальную информацию о ходе полевых работ. 
+                Это обеспечивает точное и своевременное выполнение операций непосредственно на месте.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+      <!-- КОМУ ПОДХОДИТ АГРОИАС -->
+    <section class="section for-whom fade-in">
+        <div class="container">
+            <h2 class="section__title" data-i18n="for_whom_title">Кому подходит АгроИАС</h2>
+            <div class="for-whom__grid">
+                <div class="card for-whom__card fade-in">
+                    <div class="for-whom__icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="for-whom__card-title" data-i18n="for_whom_1">Комитеты и министерства сельского хозяйства</h3>
+                    <p class="for-whom__card-desc" data-i18n="for_whom_1_desc">
+                        Мониторинг состояния АПК региона, прогнозирование общих урожаев, анализ эффективности субсидий и своевременное реагирование на кризисные ситуации (засуха, болезни культур).
+                    </p>
+                </div>
+                <div class="card for-whom__card fade-in">
+                    <div class="for-whom__icon">
+                       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Основное тело здания (прямоугольник) -->
+  <rect x="3" y="10" width="18" height="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Крыша здания (треугольник) -->
+  <path d="M3 10L12 4L21 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Дверь (для читаемости, без окон) -->
+  <rect x="10" y="18" width="4" height="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                    </div>
+                    <h3 class="for-whom__card-title" data-i18n="for_whom_2">Агрохолдинги и крупные предприятия</h3>
+                    <p class="for-whom__card-desc" data-i18n="for_whom_2_desc">
+                        Централизованное управление несколькими филиалами, оптимизация затрат на удобрения и топливо, анализ работы техники и повышение общей продуктивности.
+                    </p>
+                </div>
+                <div class="card for-whom__card fade-in">
+                    <div class="for-whom__icon">
+                       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Основной контур лупы -->
+  <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Ручка лупы (без лишних линий) -->
+  <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                    </div>
+                    <h3 class="for-whom__card-title" data-i18n="for_whom_4">Научные исследователи и институты</h3>
+                    <p class="for-whom__card-desc" data-i18n="for_whom_4_desc">
+                        Сбор исторических и реальных данных для исследования влияния климата на культуры, тестирование новых агротехнологий и подготовка научных публикаций.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ПРОАКТИВНЫЙ МОНИТОРИНГ -->
+    <section class="monitoring section fade-in">
+      <div class="container">
+
+        <div class="monitoring__header fade-in">
+          <h2 class="monitoring__title" data-i18n="monitoring_title">Проактивный мониторинг</h2>
+          <h2 class="monitoring__module-label" data-i18n="monitoring_module">Модуль</h2>
+        </div>
+
+        <p class="monitoring__text fade-in" data-i18n="monitoring_text">
+          <strong>проактивный мониторинг</strong> позволяет в режиме реального времени
+          получать данные о состоянии полей, почвы и растений для решения
+          задач прогнозирования, предупреждения и рекомендаций
+        </p>
+        <div class="monitoring__section monitoring__section--input fade-in" data-i18n="monitoring_input_section">
+          <h3 class="monitoring__section-title" data-i18n="monitoring_input_title">Входные данные</h3>
+          <div class="monitoring__cards">
+            <div class="monitoring__card" data-i18n="monitoring_input_1">Данные о посевах</div>
+            <div class="monitoring__card" data-i18n="monitoring_input_2">Данные о погоде</div>
+            <div class="monitoring__card" data-i18n="monitoring_input_3">Состояние почвы</div>
+            <div class="monitoring__card" data-i18n="monitoring_input_4">История обработки</div>
+            <div class="monitoring__card" data-i18n="monitoring_input_5">Экологические нормы</div>
+          </div>
+        </div>
+        <div class="monitoring__section monitoring__section--process ">
+          <h3 class="monitoring__section-title fade-in" data-i18n="monitoring_process_title">Работа модуля</h3>
+          <div class="monitoring__process">
+            <div class="monitoring__arrow"></div>
+            <ul class="monitoring__functions fade-in">
+              <li data-i18n="monitoring_process_1">Анализ данных</li>
+              <li data-i18n="monitoring_process_2">Выявление отклонений</li>
+              <li data-i18n="monitoring_process_3">Прогнозирование</li>
+              <li data-i18n="monitoring_process_4">Формирование отчётов</li>
+            </ul>
+          </div>
+        </div>
+        <div class="monitoring__section monitoring__section--output ">
+          <h3 class="monitoring__section-title fade-in" data-i18n="monitoring_output_title">Выходные данные</h3>
+          <div class="monitoring__cards monitoring__cards--stair">
+            <div class="monitoring__card monitoring__card--stretch fade-in" data-i18n="monitoring_output_1">Рекомендации по обработке</div>
+            <div class="monitoring__card monitoring__card--stretch fade-in" data-i18n="monitoring_output_2">Прогноз урожайности</div>
+            <div class="monitoring__card monitoring__card--stretch fade-in" data-i18n="monitoring_output_3">Отчёты о состоянии полей</div>
+            <div class="monitoring__card monitoring__card--stretch fade-in" data-i18n="monitoring_output_4">Аналитические данные для руководства</div>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+    <section class="section data-types fade-in">
+        <div class="container">
+            <h2 class="section__title" data-i18n="data_types_title">Основные типы данных для мониторинга</h2>
+            <div class="data-types__grid">
+                <div class="card data-types__card">
+                    <div class="data-types__icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 20V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 20V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 20V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="data-types__card-title" data-i18n="data_2">Датчики почвы и климата</h3>
+                    <p class="data-types__card-desc" data-i18n="data_2_desc">
+                        Влажность, температура, pH почвы, количество осадков — данные поступают в реальном времени через IoT-сети.
+                    </p>
+                </div>
+                <div class="card data-types__card">
+                    <div class="data-types__icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 13H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 17H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10 9H9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="data-types__card-title" data-i18n="data_3">Отчёты операторов и скаутов</h3>
+                    <p class="data-types__card-desc" data-i18n="data_3_desc">
+                        Записи наблюдений (состояние растений, вредители, болезни) с привязкой к геолокации.
+                    </p>
+                </div>
+                <div class="card data-types__card">
+                    <div class="data-types__icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="data-types__card-title" data-i18n="data_4">ERP/MES системы</h3>
+                    <p class="data-types__card-desc" data-i18n="data_4_desc">
+                        Интеграция с 1С, АгроСигнал и другими корпоративными системами — автоматический импорт данных о затратах, кадрах, продажах.
+                    </p>
+                </div>
+                <div class="card data-types__card">
+                    <div class="data-types__icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12h20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="data-types__card-title" data-i18n="data_5">Внешние источники</h3>
+                    <p class="data-types__card-desc" data-i18n="data_5_desc">
+                        Гидрометцентр (погода), Росстат (статистика АПК), Минсельхоз (регламентация) — данные обновляются автоматически по API.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="advantages section fade-in">
+      <div class="advantages__background">
+        <span></span>
+        <h2 class="advantages__heading" data-i18n="advantages_title">Преимущества</h2>
+      </div>
+
+      <div class="container">
+         <h2 class="advantages__heading--mobile" data-i18n="advantages_title">Преимущества</h2>
+        <div class="advantages__grid">
+          <div class="advantages__card fade-in" data-i18n="advantage_1">
+            <div class="advantages__card-header">
+              <h3 class="advantages__title" data-i18n="advantage_1_title">Сокращение рисков</h3>
+              <div class="advantages__number">01</div>
+            </div>
+            <p class="advantages__text" data-i18n="advantage_1_text">Проактивное выявление проблем позволяет принимать меры до возникновения серьезных потерь</p>
+          </div>
+
+          <div class="advantages__card fade-in" data-i18n="advantage_2">
+            <div class="advantages__card-header">
+              <h3 class="advantages__title" data-i18n="advantage_2_title">Экономия ресурсов</h3>
+              <div class="advantages__number">02</div>
+            </div>
+            <p class="advantages__text" data-i18n="advantage_2_text">Оптимизация использования воды, удобрений и пестицидов сокращает затраты и снижает негативное воздействие на окружающую среду</p>
+          </div>
+
+          <div class="advantages__card fade-in" data-i18n="advantage_3">
+            <div class="advantages__card-header">
+              <h3 class="advantages__title" data-i18n="advantage_3_title">Данные для принятия решений</h3>
+              <div class="advantages__number">03</div>
+            </div>
+            <p class="advantages__text" data-i18n="advantage_3_text">Детальная аналитика и отчеты предоставляют объективную информацию для долгосрочного планирования</p>
+          </div>
+
+          <div class="advantages__card fade-in" data-i18n="advantage_4">
+            <div class="advantages__card-header">
+              <h3 class="advantages__title" data-i18n="advantage_4_title">Повышение урожайности</h3>
+              <div class="advantages__number">04</div>
+            </div>
+            <p class="advantages__text" data-i18n="advantage_4_text">Благодаря своевременным действиям и оптимизированным условиям роста, урожайность увеличивается в среднем на 15-25% в зависимости от культуры.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  <!-- ГАЛЕРЕЯ ЭКРАНОВ -->
+      <section class="section screens-gallery">
+          <div class="container">
+              <h2 class="section__title" data-i18n="gallery_title">Интерфейс АгроИАС</h2>
+              <p class="screens-gallery__intro" data-i18n="gallery_intro">
+                  Удобный и интуитивно понятный интерфейс, адаптированный под задачи разных пользователей — от фермеров до руководителей регионов.
+              </p>
+              <div class="screens-gallery__item fade-in">
+                  <div class="screens-gallery__image">
+                      <img src="img/main_dashboard.png" alt="Карточка поля в АгроИАС" data-i18n="gallery_img_1_alt">
+                  </div>
+                  <div class="screens-gallery__desc">
+                      <h3 class="screens-gallery__desc-title" data-i18n="gallery_1_title">Дашборд с аналитикой</h3>
+                      <p class="screens-gallery__desc-text" data-i18n="gallery_1_text">
+                          Настройте дашборд под себя: система умеет перестраиваться в режиме no-code. Все данные о поле в одном месте: площадь, культура, история работ, текущий NDVI, влажность почвы и прогноз урожайности.
+                      </p>
+                  </div>
+              </div>
+              <div class="screens-gallery__item screens-gallery__item--reverse fade-in">
+                  <div class="screens-gallery__desc">
+                      <h3 class="screens-gallery__desc-title" data-i18n="gallery_2_title">Карточка поля</h3>
+                      <p class="screens-gallery__desc-text" data-i18n="gallery_2_text">
+                          Карточка поля объединяет все, что нужно для мониторинга: от геолокации и типа почвы до прогноза урожайности (с учетом погоды и истории). Можно быстро прикрепить результаты анализа почвы — все данные обновляются в реальном времени.
+                      </p>
+                  </div>
+                  <div class="screens-gallery__image">
+                      <img src="img/field.png" alt="Графики анализа в АгроИАС" data-i18n="gallery_img_2_alt">
+                  </div>
+              </div>
+              <div class="screens-gallery__item fade-in">
+                  <div class="screens-gallery__image">
+                      <img src="img/graphics.png" alt="Настройка показателей в АгроИАС" data-i18n="gallery_img_3_alt">
+                  </div>
+                  <div class="screens-gallery__desc">
+                      <h3 class="screens-gallery__desc-title" data-i18n="gallery_3_title">Анализ показателей</h3>
+                      <p class="screens-gallery__desc-text" data-i18n="gallery_3_text">
+                          Динамика изменения ключевых показателей (NDVI, влажность, температура) за выбранный период. Возможность сравнения данных по разным полям и культурам.
+                      </p>
+                  </div>
+              </div>
+              <div class="screens-gallery__item screens-gallery__item--reverse fade-in">
+                  <div class="screens-gallery__desc">
+                      <h3 class="screens-gallery__desc-title" data-i18n="gallery_4_title">Распознавание документов</h3>
+                      <p class="screens-gallery__desc-text" data-i18n="gallery_4_text">
+                        Быстрое распознавание актов, сертификатов и договоров для АПК — без ручного ввода данных.
+                        Система извлекает ключевую информацию, сохраняет документы в структурированном виде и связывает их с нужными объектами (полями, культурами).
+                      </p>
+                  </div>
+                  <div class="screens-gallery__image">
+                      <img src="img/weather_data.png" alt="Прогноз урожайности в АгроИАС" data-i18n="gallery_img_4_alt">
+                  </div>
+              </div>
+          </div>
+      </section>
+      <section id="progress" class="progress section">
+        <h2 class="progress__title fade-in" data-i18n="progress_title">Ход разработки</h2>
+        <div class="container progress__wrapper">
+          <div class="progress__left">
+            <div class="progress__cards">
+              <div class="progress__card fade-in" data-i18n="progress_card_1">
+                <div class="progress__card-number">1</div>
+                <div class="progress__card-text">
+                  <h3 class="progress__card-title" data-i18n="progress_card_1_title">Построение моделей</h3>
+                  <p class="progress__card-desc" data-i18n="progress_card_1_text">Используем современные алгоритмы и
+                    аналитические модели для прогнозирования роста культур, выявления рисков и оптимизации агротехнических
+                    процессов.</p>
+                </div>
+              </div>
+              <div class="progress__card fade-in" data-i18n="progress_card_2">
+                <div class="progress__card-number">2</div>
+                <div class="progress__card-text">
+                  <h3 class="progress__card-title" data-i18n="progress_card_2_title">Построение архитектуры</h3>
+                  <p class="progress__card-desc" data-i18n="progress_card_2_text">Разрабатываем цифровую архитектуру агросистемы, которая обеспечивает точный контроль над ресурсами и интеграцию всех компонентов мониторинга для эффективного управления.</p>
+                </div>
+              </div>
+              <div class="progress__card fade-in" data-i18n="progress_card_3">
+                <div class="progress__card-number">3</div>
+                <div class="progress__card-text">
+                  <h3 class="progress__card-title" data-i18n="progress_card_3_title">Сбор данных</h3>
+                  <p class="progress__card-desc" data-i18n="progress_card_3_text">Мы занимаемся сбором данных с полей, почвы и растений для мониторинга и анализа агробиотехнических процессов. Будем рады любым данным и сотрудничеству с фермерами, исследовательскими центрами и компаниями, чтобы вместе повышать эффективность сельского хозяйства.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="progress__right fade-in">
+            <img src="img/interface_full.png" alt="Интерфейс системы" class="progress__image" data-i18n="progress_image_alt">
+          </div>
+
+        </div>
+      </section>
+      <section id="roadmap" class="roadmap section">
+        <h2 class="roadmap__title fade-in" data-i18n="roadmap_title">Дорожная карта проекта</h2>
+        <div class="container roadmap__wrapper">
+          <p class="roadmap__desc fade-in" data-i18n="roadmap_desc">
+            План выполнения работ по внедрению системы «АгроИАС» с указанием сроков каждого этапа
+          </p>
+
+          <!-- Контейнер для диаграммы Ганта -->
+          <div class="roadmap__gantt fade-in">
+            <!-- Шапка диаграммы (шкала времени: недели) -->
+            <div class="gantt__header">
+              <div class="gantt__header-label">Этап проекта</div>
+              <!-- Шкала времени (1–24 недели) -->
+              <div class="gantt__timeline">
+                <div class="gantt__week" data-week="1">1</div>
+                <div class="gantt__week" data-week="2">2</div>
+                <div class="gantt__week" data-week="3">3</div>
+                <div class="gantt__week" data-week="4">4</div>
+                <div class="gantt__week" data-week="5">5</div>
+                <div class="gantt__week" data-week="6">6</div>
+                <div class="gantt__week" data-week="7">7</div>
+                <div class="gantt__week" data-week="8">8</div>
+                <div class="gantt__week" data-week="9">9</div>
+                <div class="gantt__week" data-week="10">10</div>
+                <div class="gantt__week" data-week="11">11</div>
+                <div class="gantt__week" data-week="12">12</div>
+                <div class="gantt__week" data-week="13">13</div>
+                <div class="gantt__week" data-week="14">14</div>
+                <div class="gantt__week" data-week="15">15</div>
+                <div class="gantt__week" data-week="16">16</div>
+                <div class="gantt__week" data-week="17">17</div>
+                <div class="gantt__week" data-week="18">18</div>
+                <div class="gantt__week" data-week="19">19</div>
+                <div class="gantt__week" data-week="20">20</div>
+                <div class="gantt__week" data-week="21">21</div>
+                <div class="gantt__week" data-week="22">22</div>
+                <div class="gantt__week" data-week="23">23</div>
+                <div class="gantt__week" data-week="24">24</div>
+              </div>
+            </div>
+
+              <!-- Элементы диаграммы (каждое задание) -->
+              <div class="gantt__tasks">
+                <!-- Этап 1: Диагностика (1 неделя: неделя 1) -->
+                <div class="gantt__task">
+                  <div class="gantt__task-label">
+                    <span class="gantt__task-name" data-i18n="roadmap_task_1">Диагностика</span>
+                    <span class="gantt__task-duration" data-i18n="roadmap_task_1_dur">1 неделя</span>
+                  </div>
+                  <div class="gantt__task-bar" style="--start-week: 1; --duration: 1;" data-i18n="roadmap_task_1_tooltip">
+                    1
+                  </div>
+                </div>
+
+                <!-- Этап 2: Анализ (4 недели: недели 2–5) -->
+                <div class="gantt__task">
+                  <div class="gantt__task-label">
+                    <span class="gantt__task-name" data-i18n="roadmap_task_2">Анализ</span>
+                    <span class="gantt__task-duration" data-i18n="roadmap_task_2_dur">4 недели</span>
+                  </div>
+                  <div class="gantt__task-bar" style="--start-week: 2; --duration: 4;" data-i18n="roadmap_task_2_tooltip">
+                    Недели 2–5
+                  </div>
+                </div>
+
+                <!-- Этап 3: Конструирование (6 недель: недели 6–11) -->
+                <div class="gantt__task">
+                  <div class="gantt__task-label">
+                    <span class="gantt__task-name" data-i18n="roadmap_task_3">Конструирование</span>
+                    <span class="gantt__task-duration" data-i18n="roadmap_task_3_dur">6 недель</span>
+                  </div>
+                  <div class="gantt__task-bar" style="--start-week: 6; --duration: 6;" data-i18n="roadmap_task_3_tooltip">
+                    Недели 6–11
+                  </div>
+                </div>
+
+                <!-- Этап 4: Разработка (8 недель: недели 12–19) -->
+                <div class="gantt__task">
+                  <div class="gantt__task-label">
+                    <span class="gantt__task-name" data-i18n="roadmap_task_4">Разработка</span>
+                    <span class="gantt__task-duration" data-i18n="roadmap_task_4_dur">8 недель</span>
+                  </div>
+                  <div class="gantt__task-bar" style="--start-week: 12; --duration: 8;" data-i18n="roadmap_task_4_tooltip">
+                    Недели 12–19
+                  </div>
+                </div>
+
+                <!-- Этап 5: Приемно-сдаточные работы (2 недели: недели 20–21) -->
+                <div class="gantt__task">
+                  <div class="gantt__task-label">
+                    <span class="gantt__task-name" data-i18n="roadmap_task_5">Приемно-сдаточные работы</span>
+                    <span class="gantt__task-duration" data-i18n="roadmap_task_5_dur">2 недели</span>
+                  </div>
+                  <div class="gantt__task-bar" style="--start-week: 20; --duration: 2;" data-i18n="roadmap_task_5_tooltip">
+                    20–21
+                  </div>
+                </div>
+
+                <!-- Этап 6: Развертывание (3 недели: недели 22–24) -->
+                <div class="gantt__task">
+                  <div class="gantt__task-label">
+                    <span class="gantt__task-name" data-i18n="roadmap_task_6">Сдача в эксплуатацию</span>
+                    <span class="gantt__task-duration" data-i18n="roadmap_task_6_dur">3 недели</span>
+                  </div>
+                  <div class="gantt__task-bar" style="--start-week: 22; --duration: 3;" data-i18n="roadmap_task_6_tooltip">
+                    Недели 22–24
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+          <!-- Этапы внедрения -->
+        <section class="implementation">
+
+          <div class="container">
+            <div class="implementation__header">
+              <h2 class="implementation__title" data-i18n="implementation_title">ЭТАПЫ ВНЕДРЕНИЯ</h2>
+              <div class="implementation__divider"></div>
+              <p class="implementation__desc" data-i18n="implementation_desc">АгроРешение может быть интегрировано в течение 120 дней</p>
+            </div>
+
+            <div class="implementation__timeline">
+              <!-- Этап 1 -->
+              <div class="implementation__stage implementation__stage--1  " data-i18n="implementation_stage_1">
+                <div class="implementation__stage-number">1</div>
+                <div class="implementation__stage-content fade-in">
+                  <h3 class="implementation__stage-title" data-i18n="implementation_stage_1_title">Анализ текущей системы</h3>
+                  <p class="implementation__stage-text" data-i18n="implementation_stage_1_text">Оценка существующих процессов, выявление слабых мест и целей внедрения.</p>
+                  <p class="implementation__stage-duration" data-i18n="implementation_stage_1_duration">Срок: 14 дней</p>
+                </div>
+              </div>
+
+              <!-- Этап 2 -->
+              <div class="implementation__stage implementation__stage--2" data-i18n="implementation_stage_2">
+                <div class="implementation__stage-number">2</div>
+                <div class="implementation__stage-content fade-in">
+                  <h3 class="implementation__stage-title" data-i18n="implementation_stage_2_title">Разработка индивидуального проекта</h3>
+                  <p class="implementation__stage-text" data-i18n="implementation_stage_2_text">Создание детального плана внедрения с учетом особенностей бизнеса.</p>
+                  <p class="implementation__stage-duration" data-i18n="implementation_stage_2_duration">Срок: 21 день</p>
+                </div>
+              </div>
+
+              <!-- Этап 3 -->
+              <div class="implementation__stage implementation__stage--3" data-i18n="implementation_stage_3">
+                <div class="implementation__stage-number">3</div>
+                <div class="implementation__stage-content fade-in">
+                  <h3 class="implementation__stage-title" data-i18n="implementation_stage_3_title">Разработка и настройка</h3>
+                  <p class="implementation__stage-text" data-i18n="implementation_stage_3_text">Программирование модулей, интеграция с существующими системами, тестирование.</p>
+                  <p class="implementation__stage-duration" data-i18n="implementation_stage_3_duration">Срок: 45 дней</p>
+                </div>
+              </div>
+
+              <!-- Этап 4 -->
+              <div class="implementation__stage implementation__stage--4" data-i18n="implementation_stage_4">
+                <div class="implementation__stage-number">4</div>
+                <div class="implementation__stage-content fade-in">
+                  <h3 class="implementation__stage-title" data-i18n="implementation_stage_4_title">Обучение персонала</h3>
+                  <p class="implementation__stage-text" data-i18n="implementation_stage_4_text">Тренинги для сотрудников по работе с новой системой, подготовка руководителей.</p>
+                  <p class="implementation__stage-duration" data-i18n="implementation_stage_4_duration">Срок: 10 дней</p>
+                </div>
+              </div>
+
+              <!-- Этап 5 -->
+              <div class="implementation__stage implementation__stage--5" data-i18n="implementation_stage_5">
+                <div class="implementation__stage-number">5</div>
+                <div class="implementation__stage-content fade-in">
+                  <h3 class="implementation__stage-title" data-i18n="implementation_stage_5_title">Запуск и поддержка</h3>
+                  <p class="implementation__stage-text" data-i18n="implementation_stage_5_text">Постановка системы в эксплуатацию, мониторинг работы, техническая поддержка.</p>
+                  <p class="implementation__stage-duration" data-i18n="implementation_stage_5_duration">Срок: 30 дней (после запуска — поддержка 24/7)</p>
+                </div>
+              </div>
+
+              <div class="implementation__line"></div>
+            </div>
+          </div> 
+        </section>  
+
+    <!-- Приглашение к сотрудничеству -->
+    <section class="cooperation" id="cooperation">
+      <div class="container">
+        <div class="cooperation__wrapper">
+          <div class="cooperation__text-block">
+            <h2 class="cooperation__title" data-i18n="cooperation_title">Мы приглашаем фермеров к сотрудничеству</h2>
+            <p class="cooperation__desc" data-i18n="cooperation_text">
+              <strong> Система настраивается индивидуально</strong> под каждый объект.
+              Мы вводим в среду установленные вами закономерности для выработки
+              качественно новых решений
+            </p>
+            <a href="#cooperationForm" class="cooperation__btn" data-i18n="cooperation_btn">Связаться</a>
+          </div>
+
+          <!-- Правый блок: Форма -->
+          <form class="cooperation__form" id="cooperationForm">
+            <h2 class="cooperation__form-title" data-i18n="cooperation_form_title">Свяжитесь с нами</h2>
+            <div class="cooperation__form-group">
+              <input 
+                type="text" 
+                name="name" 
+                class="cooperation__form-input" 
+                required
+                data-i18n="cooperation_form_name_placeholder"
+                placeholder="Ваше имя"
+              >
+            </div>
+            <div class="cooperation__form-group">
+              <input 
+                type="email" 
+                name="email" 
+                class="cooperation__form-input" 
+                required
+                data-i18n="cooperation_form_email_placeholder"
+                placeholder="Эл. Почта"
+              >
+            </div>
+            <div class="cooperation__form-group">
+              <input 
+                type="tel" 
+                name="phone" 
+                class="cooperation__form-input" 
+                required
+                data-i18n="cooperation_form_phone_placeholder"
+                placeholder="Номер телефона"
+              >
+            </div>
+            <button type="submit" class="cooperation__form-btn" data-i18n="cooperation_form_btn">Оставить заявку</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <div id="successModal" class="modal">
+      <div class="modal__content">
+        <div class="modal__icon">✓</div>
+        <h3 class="modal__title" data-i18n="modal_success_title">Заявка отправлена!</h3>
+        <p class="modal__text" data-i18n="modal_success_text">Мы свяжемся с вами в ближайшее время.</p>
+        <button id="closeModal" class="modal__btn" data-i18n="modal_close_btn">Закрыть</button>
+      </div>
+    </div>
+    
+    <!-- Блок "Контакты" -->
+    <section class="contacts" id="contacts">
+      <div class="container">
+        <h2 class="contacts__title fade-in" data-i18n="contacts_title">Контакты</h2>
+        <div class="contacts__wrapper">
+          <div class="contacts__info fade-in">
+            <div class="contacts__info-item" data-i18n="contacts_address_block">
+              <h3 class="contacts__info-title" data-i18n="contacts_address_title">Адрес</h3>
+              <p class="contacts__info-text" data-i18n="contacts_address_text">г. Санкт-Петербург, 14-я линия В.О., д. 39, каб. 208</p>
+            </div>
+            <div class="contacts__info-item" data-i18n="contacts_phone_block">
+              <h3 class="contacts__info-title" data-i18n="contacts_phone_title">Телефон</h3>
+              <a href="tel:+74951234567" class="contacts__info-link" data-i18n="contacts_phone_text">+7 (812) 328-01-03</a>
+            </div>
+            <div class="contacts__info-item" data-i18n="contacts_email_block">
+              <h3 class="contacts__info-title" data-i18n="contacts_email_title">Эл. почта</h3>
+              <a href="mailto:info@agroreshenie.ru" class="contacts__info-link" data-i18n="contacts_email_text">valeriov@yandex.ru</a>
+            </div>
+            <div class="contacts__info-item" data-i18n="contacts_schedule_block">
+              <h3 class="contacts__info-title" data-i18n="contacts_schedule_title">Режим работы</h3>
+              <p class="contacts__info-text" data-i18n="contacts_schedule_weekdays">Пн-Пт: 9:00 — 18:00</p>
+              <p class="contacts__info-text" data-i18n="contacts_schedule_weekend">Сб-Вс: выходной</p>
+            </div>
+          </div>
+          <div class="contacts__map fade-in">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.5366637957727!2d30.264441792441346!3d59.939830210237844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469631287d84458d%3A0x45e19ba4252b409!2zMTQt0Y8g0LvQuNC9LiDQktCw0YHQuNC70YzQtdCy0YHQutC-0LPQviDQvtGB0YLRgNC-0LLQsCwgMzksINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTkxNzg!5e0!3m2!1sru!2sru!4v1759705298612!5m2!1sru!2sru" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Офис АгроИАС"
+              data-i18n="contacts_map_title">
+            </iframe>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__wrapper">
+          <div class="footer__brand fade-in" data-i18n="footer_brand">
+            <h3 class="footer__brand-title" data-i18n="footer_brand_title">АгроИАС</h3>
+            <p class="footer__brand-desc" data-i18n="footer_brand_desc">Инновационные решения для сельского хозяйства</p>
+          </div>
+          <div class="footer__nav fade-in" data-i18n="footer_nav">
+            <h4 class="footer__nav-title" data-i18n="footer_nav_title">Навигация</h4>
+            <ul class="footer__nav-list">
+              <li class="footer__nav-item"><a href="#" class="footer__nav-link" data-i18n="footer_nav_home">Главная</a></li>
+              <li class="footer__nav-item"><a href="#progress" class="footer__nav-link" data-i18n="footer_nav_progress">Ход разработки</a></li>
+              <li class="footer__nav-item"><a href="#implementation" class="footer__nav-link" data-i18n="footer_nav_implementation">Этапы внедрения</a></li>
+              <li class="footer__nav-item"><a href="#contacts" class="footer__nav-link" data-i18n="footer_nav_contacts">Контакты</a></li>
+            </ul>
+          </div>
+              <div class="footer__social fade-in" data-i18n="footer_social">
+            <h4 class="footer__social-title" data-i18n="footer_social_title">Следите за нами</h4>
+            <ul class="footer__social-list">
+              <li class="footer__social-item">
+                <a href="https://t.me/agroreshenie" class="footer__social-link" target="_blank" aria-label="Телеграм">
+                  <svg width="24" height="24" fill="currentColor" viewBox="0 0 240 240">
+                    <path d="M120 0C53.7 0 0 53.7 0 120s53.7 120 120 120 120-53.7 120-120S186.3 0 120 0zm56.1 85.7l-18.5 87.4c-1.4 6.3-5.2 7.9-10.6 4.9l-29.4-21.7-14.2 13.6c-1.6 1.6-2.9 2.9-5.9 2.9l2.1-30.1 54.8-49.5c2.4-2.1-.5-3.3-3.7-1.2l-67.9 42.8-29.3-9.2c-6.3-2-6.4-6.3 1.3-9.3l114.5-44.2c5.3-2 9.9 1.3 8.2 9.5z"/>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer__social-item">
+                <a href="https://litsam.ru" class="footer__social-link" target="_blank" aria-label="Веб-сайт" data-i18n="footer_social_website">
+                  <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__copyright fade-in" data-i18n="footer_copyright">
+          <p data-i18n="footer_copyright_text">&copy; 2025 АгроИАС. Все права защищены.</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
