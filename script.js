@@ -139,69 +139,56 @@ document.addEventListener('DOMContentLoaded', function () {
 
   loadTranslations(activeLang);
 
-  // ------------------- Форма с модальным окном
-  const cooperationForm = document.getElementById('cooperationForm');
-  // 1. Получаем элементы модального окна 
-  const successModal = document.getElementById('successModal');
-  const closeModalBtn = document.getElementById('closeModal');
+  // ------------------- Форма с модальным окном (с EmailJS)
+const cooperationForm = document.getElementById('cooperationForm');
+const successModal = document.getElementById('successModal');
+const closeModalBtn = document.getElementById('closeModal');
 
-  if (cooperationForm && successModal && closeModalBtn) {
-    cooperationForm.addEventListener('submit', async function (e) {
-      e.preventDefault();
-      const submitBtn = this.querySelector('.cooperation__form-btn');
-      const originalBtnText = submitBtn.textContent; 
-      
-      submitBtn.disabled = true;
-      submitBtn.textContent = currentTranslations.form_sending || 'Отправка...';
+if (cooperationForm && successModal && closeModalBtn) {
+  cooperationForm.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const submitBtn = this.querySelector('.cooperation__form-btn');
+    const originalBtnText = submitBtn.textContent; 
+    
+    submitBtn.disabled = true;
+    submitBtn.textContent = currentTranslations.form_sending || 'Отправка...';
 
-      try {
-        const formData = new FormData(this);
-        const urlEncodedData = new URLSearchParams();
-        formData.forEach((value, key) => {
-          urlEncodedData.append(key, value.trim());
-        });
+    try {
+      // Отправка через EmailJS (замени на твои данные!)
+      const result = await emailjs.sendForm(
+         'service_cbr8ms7', 
+  'template_zlkltyq', 
+        this // Передаем форму как источник данных (поля name, email, phone автоматически подтянутся)
+      );
 
-        const response = await fetch('/send-mail', { 
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-          },
-          body: urlEncodedData
-        });
-
-        if (!response.ok) {
-          const errorData = await response.json().catch(() => null);
-          throw new Error(errorData?.message || `Ошибка сервера: ${response.status}`);
-        }
-
-        const result = await response.json();
-        
-        if (result.status === 'success') {
-          // 2. Открываем модальное окно 
-          successModal.classList.add('active');
-          this.reset();
-        } else {
-          alert(currentTranslations.form_error || result.message || 'Ошибка! Попробуйте позже.');
-        }
-      } catch (error) {
-        alert(currentTranslations.form_connection_error || 'Ошибка соединения! Проверьте интернет.');
-        console.error('Ошибка отправки формы:', error);
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalBtnText;
+      // Если отправка успешна — открываем модальное окно
+      if (result.status === 200) {
+        successModal.classList.add('active');
+        this.reset();
+      } else {
+        alert(currentTranslations.form_error || 'Ошибка! Попробуйте позже.');
       }
-    });
+    } catch (error) {
+      // Обработка ошибок (показываем текст ошибки)
+      alert(currentTranslations.form_connection_error || `Ошибка: ${error.text}`);
+      console.error('Ошибка отправки формы:', error);
+    } finally {
+      // Восстанавливаем кнопку
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalBtnText;
+    }
+  });
 
-    // 3. Закрытие модального окна по кнопке 
-    closeModalBtn.addEventListener('click', () => {
+  // Закрытие модального окна по кнопке
+  closeModalBtn.addEventListener('click', () => {
+    successModal.classList.remove('active');
+  });
+
+  // Закрытие по клику вне модального окна
+  successModal.addEventListener('click', (e) => {
+    if (e.target === successModal) {
       successModal.classList.remove('active');
-    });
-
-    // 4. Закрытие по клику вне модального 
-    successModal.addEventListener('click', (e) => {
-      if (e.target === successModal) {
-        successModal.classList.remove('active');
-      }
-    });
-  }
+    }
+  });
+}
 });
