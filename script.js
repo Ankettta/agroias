@@ -154,14 +154,13 @@ if (cooperationForm && successModal && closeModalBtn) {
     submitBtn.textContent = currentTranslations.form_sending || 'Отправка...';
 
     try {
-      // Отправка через EmailJS (замени на твои данные!)
+      // Отправка через EmailJS 
       const result = await emailjs.sendForm(
          'service_cbr8ms7', 
   'template_zlkltyq', 
-        this // Передаем форму как источник данных (поля name, email, phone автоматически подтянутся)
+        this 
       );
 
-      // Если отправка успешна — открываем модальное окно
       if (result.status === 200) {
         successModal.classList.add('active');
         this.reset();
@@ -192,3 +191,4 @@ if (cooperationForm && successModal && closeModalBtn) {
   });
 }
 });
+
